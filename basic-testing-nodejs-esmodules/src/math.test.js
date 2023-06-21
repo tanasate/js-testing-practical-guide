@@ -31,3 +31,35 @@ test('should yeild a correct sum if an array of numeric string values is provide
 
     expect(result).toBe(3)
 })
+
+test('should yeild 0 if an empty array is provided', () => {
+
+    const numbers = []
+
+    const result = add(numbers)
+
+    expect(result).toBe(0)
+
+})
+
+test('should throw an error if no value is passed into the function', () => {
+
+    /* example for expect not
+        //*    expect(error).not.toBeDefined()
+    */
+
+    // Normally
+    try {
+        const result = add()
+    } catch (error) {
+        expect(error).toBeDefined()
+    }
+
+    // Tip
+    const resultFn = () => {
+        add()
+    }
+
+    expect(resultFn).toThrow()
+
+})
