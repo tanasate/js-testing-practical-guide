@@ -63,3 +63,14 @@ test('should throw an error if no value is passed into the function', () => {
     expect(resultFn).toThrow()
 
 })
+
+test('should throw an error if provided with multiple arguments instead of an array', () => {
+    const number1 = 1
+    const number2 = 2
+
+    const resultFn = () => {
+        add(number1, number2)
+    }
+
+    expect(resultFn).toThrow(/numbers is not iterable/)
+})
